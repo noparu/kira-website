@@ -1,3 +1,4 @@
+import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
 import React from 'react'
 

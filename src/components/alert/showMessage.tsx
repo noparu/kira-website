@@ -1,6 +1,6 @@
 import { toast } from "react-toastify"
 
-const ShowMessage = (message: any, status = 'success') => {
+const showMessage = (message: any, status = 'success') => {
     if (status == 'success') {
         toast.success(message, {
             position: "top-right",
@@ -26,4 +26,4 @@ const ShowMessage = (message: any, status = 'success') => {
     }
 }
 
-export default ShowMessage
+export default showMessage
