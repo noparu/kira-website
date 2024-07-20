@@ -6,7 +6,7 @@ const AboutPage = () => {
             <p className="text-glow font-garamond text-white text-2xl">Thank you for participating in this website, “kira” will make this world a better place.</p>
 
             <p className='text-glow font-garamond text-white'>
-                <a href='instagram.com/ken.wakuii'>my instagram</a>
+                <a href='https://instagram.com/ken.wakuii' target='_blank' rel='noopener noreferrer'>my instagram</a>
             </p>
         </div>
     )

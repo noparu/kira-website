@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const WritePage = () => {
     const [message, setMessage] = useState<string>("")
-    const [countdown, setCountdown] = useState(30);
+    const [countdown, setCountdown] = useState(15);
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const handleChangeMessage = (e: any) => {
@@ -29,7 +29,7 @@ const WritePage = () => {
         try {
             setIsLoading(true)
             if (countdown > 0) {
-                showMessage(`Unuccessfully written, try in ${countdown} second!`, 'error')
+                showMessage(`To avoid spam please wait another ${countdown} seconds`, 'error')
                 setIsLoading(false)
             }
             else if (message !== '') {
