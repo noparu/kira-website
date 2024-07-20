@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 
 const AboutPage = () => {
@@ -7,7 +6,7 @@ const AboutPage = () => {
             <p className="text-glow font-garamond text-white text-2xl">Thank you for participating in this website, “kira” will make this world a better place.</p>
 
             <p className='text-glow font-garamond text-white'>
-                <Link href='instagram.com/ken.wakuii'>my instagram</Link>
+                <a href='instagram.com/ken.wakuii'>my instagram</a>
             </p>
         </div>
     )
