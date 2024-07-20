@@ -7,7 +7,6 @@ const InputText = ({ type = "text", onChange, disabled = false, className, value
             disabled={disabled}
             value={value}
             placeholder={placeholder}
-            autoFocus
         />
     )
 }
