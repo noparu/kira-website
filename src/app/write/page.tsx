@@ -47,11 +47,11 @@ const WritePage = () => {
                 setCountdown(30)
                 setIsLoading(false)
             } else {
-                showMessage(`Unuccessfully written!`, 'error')
+                showMessage(`Unsuccessfully written!`, 'error')
                 setIsLoading(false)
             }
         } catch (error) {
-            showMessage('Unuccessfully written!', 'error')
+            showMessage('Unsuccessfully written!', 'error')
             setIsLoading(false)
         }
     }
