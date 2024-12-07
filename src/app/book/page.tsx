@@ -36,7 +36,7 @@ const BookPage = () => {
             <p className='text-white text-xl text-glow'>Join Telegram to see the Writen Names:</p>
             <Link href="https://t.me/kira_messages" className='text-blue-300 text-xl text-glow' target='_blank' rel='noopener noreferrer'>t.me/kira_messages {`(Click here)`}</Link>
             </div>
-            <img src="/images/kira-telegram.png" alt="kira-website" className='max-h-full' />
+            <img src="https://github.com/noparu/kira-website/blob/dev/public/images/kira-telegram.PNG?raw=true" alt="kira-website" className='max-h-full' />
             {/* {isLoading && (
                 <p className='text-white text-xl text-glow'>Loading...</p>
             )}
