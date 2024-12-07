@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase';
 
 import InputText from '@/components/input/inputText';
 import showMessage from '@/components/alert/showMessage';
@@ -10,6 +9,7 @@ const WritePage = () => {
     const [message, setMessage] = useState<string>("")
     const [countdown, setCountdown] = useState(15);
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [buttonText, setButtonText] = useState<any>("Send")
 
     const handleChangeMessage = (e: any) => {
         const value = e.target.value
@@ -33,11 +33,6 @@ const WritePage = () => {
                 setIsLoading(false)
             }
             else if (message !== '') {
-                await supabase
-                    .from('messages')
-                    .insert({
-                        message
-                    })
                 await axios.post(url, {
                     chat_id: chatID,
                     text: message
@@ -47,7 +42,7 @@ const WritePage = () => {
                 setCountdown(30)
                 setIsLoading(false)
             } else {
-                showMessage(`Unsuccessfully written!`, 'error')
+                showMessage(`Text must not be empty!`, 'error')
                 setIsLoading(false)
             }
         } catch (error) {
@@ -69,6 +64,14 @@ const WritePage = () => {
 
         return () => clearInterval(intervalId);
     }, [countdown]);
+
+    useEffect(() => {
+        if(countdown >= 1) {
+            countdown && countdown < 1 ? setButtonText("Send") : setButtonText('Wait ' + countdown + "s")
+        } else {
+            setButtonText("Send")
+        }
+    }, [countdown])
 
     return (
         <div className='w-full h-full p-4 flex flex-col items-center justify-center text-center text-white font-garamond'>
@@ -92,12 +95,12 @@ const WritePage = () => {
 
             <form onSubmit={handleSubmitForm} className="mt-12 relative">
                 <InputText
-                    className="w-[300px] sm:w-[400px] outline-none border-b border-white bg-transparent pr-12 text-xl"
+                    className="w-full sm:max-w-[400px] outline-none border-b border-white bg-transparent pr-12 text-xl"
                     name="message"
                     value={message}
                     onChange={handleChangeMessage}
                 />
-                <button type={isLoading ? 'button' : 'submit'} className='absolute right-0 top-0 bottom-0 text-xl -mt-1 text-glow outline-none'>Send</button>
+                <button type={isLoading ? 'button' : 'submit'} className='absolute right-0 top-0 bottom-0 text-xl -mt-1 text-glow outline-none'>{buttonText}</button>
             </form>
         </div>
     )
