@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -7,8 +8,9 @@ const HomePage = () => {
             {/* content */}
             <div className="w-full h-full relative flex items-center justify-center text-center">
                 {/* background image */}
-                <div className="absolute opacity-70 left-0 right-0 top-0 bottom-0 w-full h-full flex items-center justify-center">
-                    <img src='/images/kira-heart.png' className='w-[650px]' />
+                <div className="absolute opacity-70 left-0 right-0 top-0 bottom-0 w-full h-full flex items-center justify-center mix-blend-screen">
+                    {/* <img src='/images/kira-heart.png' className='w-[650px]' /> */}
+                    <Image src="/images/kira-heart.png" alt='kira-website' width={650} height={100} blurDataURL='https://github.com/noparu/kira-website/blob/dev/public/images/kira-heart.png?raw=true' placeholder="blur" />
                 </div>
 
                 {/* text */}
